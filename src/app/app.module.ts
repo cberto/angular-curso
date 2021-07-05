@@ -11,6 +11,7 @@ import { ContadorModule } from './contadores/contador.module';
 import { HeroesModule } from './heroes/heroes.module';
 // import { HeroeComponent } from './heroes/heroe/heroe.component';
 // import { ListadoComponent } from './heroes/listado/listado.component';
+import { DbzModule } from './dbz/dbz.module';
 
 
 
@@ -29,6 +30,7 @@ import { HeroesModule } from './heroes/heroes.module';
     BrowserModule,
     HeroesModule,
     ContadorModule,
+    DbzModule
 
 
   ],
