@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../service/dbz.service';
 
 @Component({
   selector: 'app-personajes',
@@ -12,5 +13,7 @@ export class PersonajesComponent  {
 //Arreglos de personajes
 personajes: Personaje[]= [];
 
+constructor(private dbzService: DbzService){
 
+}
 }

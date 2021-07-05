@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../service/dbz.service';
 
 // interface Personaje{
 //   nombre:string;
@@ -30,7 +31,12 @@ nuevo: Personaje={
 }
 
 agregarNuevoPersonaje(argumento: Personaje){
-  console.log(argumento);
+  // console.log(argumento);
   this.personajes.push(argumento);
+}
+
+//def prop, inyeccion de dependencies
+constructor(private dbzService: DbzService){
+
 }
 }
