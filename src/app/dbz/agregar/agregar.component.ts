@@ -2,6 +2,7 @@ import { Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../service/dbz.service';
 
 @Component({
   selector: 'app-agregar',
@@ -14,11 +15,13 @@ export class AgregarComponent  {
     nombre:'',
     poder: 0
   }
+
+  constructor(private dbzService: DbzService){}
   //hijos
   //personaje emite personaje
   //Emitir eventos
 
-  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  // @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
   // cambiarNombre(event: any) {
   //   console.log(event.target.value);
   // }
@@ -28,10 +31,12 @@ export class AgregarComponent  {
     if(this.nuevo.nombre.trim().length === 0){
       return;
     }
+
+    this.dbzService.agregarPersonaje(this.nuevo);
     // //preve el comportamiento
     // event.preventDefault();
     // console.log(this.nuevo);
-    this.onNuevoPersonaje.emit(this.nuevo);
+    // this.onNuevoPersonaje.emit(this.nuevo);
 
     // this.personajes.push(this.nuevo);
     this.nuevo={

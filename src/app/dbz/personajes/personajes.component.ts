@@ -9,9 +9,14 @@ import { DbzService } from '../service/dbz.service';
 })
 export class PersonajesComponent  {
 //para llamar al componenete padre y usar sus hijos
-  @Input()
-//Arreglos de personajes
-personajes: Personaje[]= [];
+//   @Input()
+// //Arreglos de personajes
+// personajes: Personaje[]= [];
+
+//acceso a esos personaje
+get personajes() {
+  return this.dbzService.personajes;
+}
 
 constructor(private dbzService: DbzService){
 
